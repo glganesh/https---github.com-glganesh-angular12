@@ -1,0 +1,38 @@
+<mat-toolbar class='top-menu'>
+  <span>Department Details</span>
+  <span class='fill-remaining-space'></span>
+  <button class='btn-dialog-button' mat-stroked-button (click)='onClose()' tabindex="-1">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form [formGroup]='_service.form' class='normal-form'>
+  <mat-grid-list cols="1" rowHeight="200px">
+    <mat-grid-tile>
+      <div class='controles-container'>
+        <mat-form-field>
+          <input formControlNumber='id' matInput placeholder="ID" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName='name' matInput placeholder="NAME" autocomplete="off">
+
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName='email' matInput placeholder="EMAIL" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName='body' matInput placeholder="BODY" autocomplete="off">
+
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-toolbar>
+    <span class='fill-remaining-space'></span>
+    <div class='button-row'>
+      <button mat-raised-button color='warn' type='submit' (click)='onSubmit()'
+        [disabled]='_service.form.invalid'>submit</button>
+      <button mat-raised-button color='primary' (click)='onClear()'>clear</button>
+    </div>
+  </mat-toolbar>
+
+</form>
